@@ -10,16 +10,16 @@ public class ContactDetails {
     public String phoneNo;
     public String email;
 
-    public ContactDetails(String firstName, String lastName, String address, String city, String state, String zipcode, String phoneNo, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zipcode = zipcode;
-        this.phoneNo = phoneNo;
-        this.email = email;
-    }
+//    public ContactDetails(String firstName, String lastName, String address, String city, String state, String zipcode, String phoneNo, String email) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.address = address;
+//        this.city = city;
+//        this.state = state;
+//        this.zipcode = zipcode;
+//        this.phoneNo = phoneNo;
+//        this.email = email;
+//    }
 
     public String getFirstName() {
         return firstName;

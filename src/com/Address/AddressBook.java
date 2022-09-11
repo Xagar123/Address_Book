@@ -7,6 +7,8 @@ public class AddressBook {
 
     Scanner sc = new Scanner(System.in);
     ArrayList<ContactDetails> contactlist = new ArrayList<>();
+
+    // Ability to add a new Contact to Address Book
     public void addNewContact() {
         ContactDetails contacts = new ContactDetails();
         System.out.println("Enter the Contact Details -");
@@ -28,6 +30,38 @@ public class AddressBook {
         contacts.setEmail(sc.nextLine());
         contactlist.add(contacts);
     }
+// UC3-Ability to edit existing contact person using their name
+    public void editContact() {
+
+        System.out.println("Enter the First Name : ");
+        String firstName = sc.nextLine();
+
+
+        boolean isAvailable = false;
+        for (ContactDetails contact : contactlist) {
+            if (firstName.equalsIgnoreCase(contact.getFirstName())) {
+                isAvailable = true;
+                System.out.println("Enter the Last Name :");
+                contact.setLastName(sc.nextLine());
+                System.out.println("Enter the Address :");
+                contact.setAddress(sc.nextLine());
+                System.out.println("Enter the City :");
+                contact.setCity(sc.nextLine());
+                System.out.println("Enter the State :");
+                contact.setState(sc.nextLine());
+                System.out.println("Enter the Zip Code :");
+                contact.setZipcode(sc.nextLine());
+                System.out.println("Enter the Phone Number :");
+                contact.setPhoneNo(sc.nextLine());
+                System.out.println("Enter the EMail ID :");
+                contact.setEmail(sc.nextLine());
+                break;
+            }
+        }
+        if (!isAvailable) {
+            System.out.println("Contact Number Not Found.");
+        }
+    }
 
     public static void main(String[] args) {
         AddressBook list = new AddressBook();
@@ -35,6 +69,7 @@ public class AddressBook {
         for(ContactDetails list2 : list.contactlist){
             System.out.println(list2);
         }
+        list.editContact();
     }
 
 }

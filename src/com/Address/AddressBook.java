@@ -62,6 +62,26 @@ public class AddressBook {
             System.out.println("Contact Number Not Found.");
         }
     }
+// UC4-delete a person using person's name
+    public void deleteContact() {
+
+        System.out.println("Enter the First Name : ");
+        String firstName = sc.next();
+
+
+        boolean isAvailable = false;
+        for (ContactDetails contact : contactlist) {
+            if (firstName.equalsIgnoreCase(contact.getFirstName())) {
+                isAvailable = true;
+                contactlist.remove(contact);
+                System.out.println("Contact Deleted.");
+                break;
+            }
+        }
+        if (!isAvailable) {
+            System.out.println("Contact Number Not Found.");
+        }
+    }
 
     public static void main(String[] args) {
         AddressBook list = new AddressBook();
@@ -70,6 +90,8 @@ public class AddressBook {
             System.out.println(list2);
         }
         list.editContact();
+        list.deleteContact();
+        System.out.println(list.contactlist);
     }
 
 }
